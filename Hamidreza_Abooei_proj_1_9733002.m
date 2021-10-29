@@ -5,7 +5,8 @@ clc
 number_of_cities = 25;
 number_of_parents = 20;
 number_of_parents_in_next_generation = 10;
-number_of_iteration = 10000;
+number_of_iteration = 100000    ;
+approach = 2;  % first approach: 1 , second approach: 2
 
 % dimention = 3        % This dimention can be used if the range of each
 % dimenttion is the same 
@@ -23,7 +24,7 @@ mean_cost = zeros(1,number_of_iteration);
 least_cost = zeros(1,number_of_iteration);
 
 for i = 1:number_of_iteration
-    [next_generation,next_generation_cost ] = NextGeneration(cities , next_generation , number_of_parents_in_next_generation);
+    [next_generation,next_generation_cost ] = NextGeneration(cities , next_generation , number_of_parents_in_next_generation,approach);
     least_cost(i) = min(next_generation_cost);
     mean_cost(i) = mean(next_generation_cost);
 %     min(next_generation_cost)

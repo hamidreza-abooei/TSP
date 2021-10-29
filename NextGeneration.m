@@ -1,4 +1,4 @@
-function [next_generation,next_generation_cost] = NextGeneration(cities,parents,number_of_parents_in_next_generation)
+function [next_generation,next_generation_cost] = NextGeneration(cities,parents,number_of_parents_in_next_generation,approach)
 %NEXTGENERATION generate next generation 
 %   
     [m, n] = size(parents);
@@ -7,7 +7,7 @@ function [next_generation,next_generation_cost] = NextGeneration(cities,parents,
         parents_costs(i) = CalcCost(cities(parents(:,i)));
     end
 
-    next_generation = GenerateChildrens(parents, parents_costs);
+    next_generation = GenerateChildrens(parents, parents_costs,approach);
     next_generation = [zeros(m,number_of_parents_in_next_generation) next_generation ];
     [m, n] = size(next_generation);
     next_generation_cost = zeros(1,n);
