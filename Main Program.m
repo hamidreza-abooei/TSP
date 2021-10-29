@@ -5,8 +5,8 @@ clc
 number_of_cities = 25;
 number_of_parents = 20;
 number_of_parents_in_next_generation = 10;
-number_of_iteration = 100000    ;
-approach = 2;  % first approach: 1 , second approach: 2
+number_of_iteration = 1000    ;
+approach = 1;  % first approach: 1 , second approach: 2
 
 % dimention = 3        % This dimention can be used if the range of each
 % dimenttion is the same 
